@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: dim_customer
+    columns:
+    - name: customer_id
+      tests: 
+        - unique
+        - not_null
+  - name: fact_weekly_sales_inventory
+    description: to test the uniqueness of the combination of warehouse_sk, item_sk, sold_wk_sk 
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - warehouse_sk
+            - item_sk
+            - sold_wk_sk
+  - name: fact_weekly_sales_inventory
+    columns:
+      - name: item_sk
+        tests:
+        - relationships:
+            to: ref('stg_catalog_sales')
+            field: ITEM_SK
+            to: ref('stg_web_sales')
+            field: ITEM_SK
+

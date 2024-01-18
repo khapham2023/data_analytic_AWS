@@ -1,0 +1,43 @@
+version: 2
+
+sources:
+    - name: raw
+      database: tpcds
+      schema: raw
+      tables: 
+        - name: customer
+          loaded_at_field: _AIRBYTE_NORMALIZED_AT
+          freshness:
+            warn_after: {count: 48, period: hour}
+        - name: customer_address
+          loaded_at_field: _AIRBYTE_NORMALIZED_AT
+          freshness:
+            warn_after: {count: 48, period: hour}
+        - name: customer_demographics
+          loaded_at_field: _AIRBYTE_NORMALIZED_AT
+          freshness:
+            warn_after: {count: 48, period: hour}
+        - name: household_demographics
+          loaded_at_field: _AIRBYTE_NORMALIZED_AT
+          freshness:
+            warn_after: {count: 48, period: hour}
+        - name: date_dim
+          loaded_at_field: _AIRBYTE_NORMALIZED_AT
+          freshness:
+            warn_after: {count: 48, period: hour}
+        - name: income_band
+          loaded_at_field: _AIRBYTE_NORMALIZED_AT
+          freshness:
+            warn_after: {count: 48, period: hour}
+        - name: catalog_sales
+          loaded_at_field: _AIRBYTE_NORMALIZED_AT
+          freshness:
+            warn_after: {count: 48, period: hour}
+        - name: web_sales
+          loaded_at_field: _AIRBYTE_NORMALIZED_AT
+          freshness:
+            warn_after: {count: 48, period: hour}
+        - name: inventory
+          loaded_at_field: _AIRBYTE_NORMALIZED_AT
+          freshness:
+            warn_after: {count: 48, period: hour}

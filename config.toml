@@ -1,0 +1,15 @@
+[source]
+url = 'https://de-materials-tpcds.s3.ca-central-1.amazonaws.com/inventory.csv'
+
+[snowflake]
+account = 'LPGDBSA-KQB04012'
+user = 'khapham197901'
+password = '..........'
+warehouse = 'COMPUTE_WH'
+database = 'TPCDS'
+schema = 'RAW'
+table = 'inventory'
+role = 'accountadmin'
+stage = 'khapham'
+
+
